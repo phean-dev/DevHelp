@@ -12,13 +12,13 @@ A Java Swing application providing a collection of useful tools for text manipul
 ## How to Use
 
 1.  **Prerequisites:** Make sure you have Java Runtime Environment (JRE) installed on your system.
-2.  **Download:** You can download the latest release from the [Releases](link-to-releases) page or clone the repository:
+2.  **Download:**
     ```bash
-    git clone [repository-url]
+    git clone https://github.com/phean-dev/DevHelp.git
     ```
 3.  **Build (if necessary):** If you downloaded the source code, navigate to the project directory and build it using your preferred Java build tool (e.g., Maven, Gradle).
     ```bash
-    # Example using Maven
+    # Example using gradle
     gradle clean build
     ```
 4.  **Run:** Execute the generated `.jar` file located in the `target` or `build/libs` directory.
