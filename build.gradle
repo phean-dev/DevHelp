@@ -1,0 +1,43 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'war'
+
+group = 'tool.main'
+version = '0.1'
+sourceCompatibility = 1.8
+
+
+repositories {
+ 	mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+	implementation fileTree(dir: 'dependencies', include: '*.jar')
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+jar {
+    from 'src/main/resources'
+}
+
+task buildJar(type: Jar) {
+   manifest {
+        attributes(
+            'Main-Class': 'main.DevHelp',
+            'Class-Path': configurations.runtimeClasspath.collect { it.getName() }.join(' ')
+        )
+    }
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE
+    archiveBaseName.set(project.name)
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+    
+    from 'src/main/resources'
+    
+    with jar
+}

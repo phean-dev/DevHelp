@@ -1,0 +1,8 @@
+/.gradle/
+bin/
+/build/
+/.metadata/
+/gradle/
+.idea/
+build/
+/.settings/
